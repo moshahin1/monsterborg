@@ -1,0 +1,271 @@
+<?xml version="1.0"?>
+<robot name="monsterborg">
+
+<!-- *************************** Links (Rigid Bodies) ****************************** -->
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <box size="0.16 0.14 0.05"/>
+            </geometry>
+            <material name="white">
+                <color rgba="1 1 1 1"/>
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="3"/>
+            <inertia ixx="0.007025" ixy="0" ixz="0"
+                     iyy="0.005525" iyz="0" izz=" 0.0113"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0 " rpy="0 0 0"/>
+            <geometry>
+                <box size=" 0.16 0.14 0.05"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="base_link">
+        <kp>100000.0</kp>
+        <kd>100000.0</kd>
+        <mu1>10.0</mu1>
+        <mu2>10.0</mu2>
+        <material>Gazebo/White</material>
+    </gazebo>
+    
+    
+    <link name="lb_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0525" length="0.05"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 0 1"/>
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.104"/>
+            <inertia ixx="9.332916666666665e-05" ixy="0" ixz="0"
+                     iyy="9.332916666666665e-05" iyz="0" izz="0.00014332499999999997"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0525" length="0.05"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="lb_wheel">
+        <kp>100000.0</kp>
+        <kd>100000.0</kd>
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <material>Gazebo/Black</material>
+    </gazebo>
+    
+    <link name="lf_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0525" length="0.05"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 0 1"/>
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.104"/>
+            <inertia ixx="9.332916666666665e-05" ixy="0" ixz="0"
+                     iyy="9.332916666666665e-05" iyz="0" izz="0.00014332499999999997"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0525" length="0.05"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="lf_wheel">
+        <kp>100000.0</kp>
+        <kd>100000.0</kd>
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+
+    <link name="rf_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0525" length="0.05"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 0 1"/>
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.104"/>
+            <inertia ixx="9.332916666666665e-05" ixy="0" ixz="0"
+                     iyy="9.332916666666665e-05" iyz="0" izz="0.00014332499999999997"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0525" length="0.05"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="rf_wheel">
+        <kp>100000.0</kp>
+        <kd>100000.0</kd>
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+
+    <link name="rb_wheel">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0525" length="0.05"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0 0 0 1"/>
+            </material>
+        </visual>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.104"/>
+            <inertia ixx="9.332916666666665e-05" ixy="0" ixz="0"
+                     iyy="9.332916666666665e-05" iyz="0" izz="0.00014332499999999997"/>
+        </inertial>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.0525" length="0.05"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <gazebo reference="rb_wheel">
+        <kp>100000.0</kp>
+        <kd>100000.0</kd>
+        <mu1>1.0</mu1>
+        <mu2>1.0</mu2>
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+<!-- ********************************** Joints ************************************* -->
+
+    <joint name="base_to_lb_wheel" type="continuous">
+        <origin xyz="-0.065 0.0935 0" rpy="-1.5708 0 0"/>
+        <parent link="base_link"/>
+        <child link="lb_wheel"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="10" velocity="100"/>
+      	<joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+    
+    
+    <joint name="base_to_lf_wheel" type="continuous">
+        <origin xyz="0.065 0.0935 0" rpy="-1.5708 0 0"/>
+        <parent link="base_link"/>
+        <child link="lf_wheel"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="10" velocity="100"/>
+      	<joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+    
+    <joint name="base_to_rf_wheel" type="continuous">
+        <origin xyz="0.065 -0.0935 0" rpy="-1.5708 0 0"/>
+        <parent link="base_link"/>
+        <child link="rf_wheel"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="10" velocity="100"/>
+      	<joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+    
+    <joint name="base_to_rb_wheel" type="continuous">
+        <origin xyz="-0.065 -0.0935 0" rpy="-1.5708 0 0"/>
+        <parent link="base_link"/>
+        <child link="rb_wheel"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="10" velocity="100"/>
+      	<joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+
+
+<!-- ******************************* Gazebo-ROS Plugins *************************** -->
+
+    <gazebo>
+        <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+            <robotNamespace>/monsterborg</robotNamespace>
+        </plugin>
+    </gazebo> 
+    
+<!-- ******************************** Transmissions ******************************* -->
+
+    <transmission name='tran1'>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name='base_to_lb_wheel'>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint> 
+        <actuator name='motor1'> 
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction> 
+        </actuator>
+    </transmission>
+    
+    
+    <transmission name='tran2'>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name='base_to_lb_wheel'>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint> 
+        <actuator name='motor2'> 
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction> 
+        </actuator>
+    </transmission>
+    
+    
+    <transmission name='tran3'>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name='base_to_lb_wheel'>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint> 
+        <actuator name='motor3'> 
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction> 
+        </actuator>
+    </transmission>
+    
+    
+    <transmission name='tran4'>
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name='base_to_lb_wheel'>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint> 
+        <actuator name='motor4'> 
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction> 
+        </actuator>
+    </transmission>
+
+<!-- *********************************** END *************************************** -->
+
+</robot>
+
+
+
+	
