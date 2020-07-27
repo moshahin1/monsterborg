@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+    <rosparam command="load" file="$(find monsterborg_control)/config/control.yaml" />
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" output='screen' ns='monsterborg' 
+          args="joint_state_controller monsterborg_velocity_controller" />
+          
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn='false' output="screen">
+        <remap from='/joint_states' to='/monsterborg/joint_states'/> 
+    </node> 
+    
+</launch>
