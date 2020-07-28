@@ -23,7 +23,10 @@ A message will occur where you enter the linear and angular velocity of the mons
 of the package used that implements 4WD differential control, I advise to generate your own python file and publish the commands in a `while` loop to constantly
 publish messages to the topic. 
 
-This project was conducted on ROS Melodic and Ubuntu 18.04 LTS. The tutorials I have taken are from TheConstruct more specifically the courses taken were 'ROS for Beginners' and 'ROS Navigation in 5 Days' (https://www.theconstructsim.com/). 
+This project was conducted on ROS Melodic, Gazebo and Ubuntu 18.04 LTS. When installing everything on Ubuntu install ROS Melodic first, choosing the desktop-full installation. This installation option will install all the important packages to get started (including all packages that connect ROS with Gazebo such as the plug-ins etc...). ALso please refer to the `package.xml` file of each package to install the additional packages to get everything running smoothly. After installing ROS, install Gazebo. 
+
+
+The tutorials I have taken are from TheConstruct, more specifically the courses taken were 'ROS for Beginners' and 'ROS Navigation in 5 Days' (https://www.theconstructsim.com/). 
 
 
 
