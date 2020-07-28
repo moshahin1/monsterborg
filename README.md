@@ -3,11 +3,9 @@ So far this repository contains 2 ROS packages:
 * `monsterborg_description` 
 * `monsterborg_control`
 
-**IMPORTANT**: Before starting anything it is important to open (and do not close the tab) the terminal and run the command: `roscore`
+**IMPORTANT**: Before starting anything it is important to check you have certain ROS packages installed in ROS in order to successfully run each package. Check the `pacakage.xml` file of each packages to find the package dependencies. Secondly, open up a terminal tab (and do not close the tab) and run the command: `roscore`
 
-The `monsterborg_description` package contains the launch file (`spawn_in_gazebo.launch`) that spawns the model into Gazebo and most importantly loads the robot description into
-the parameter server under the variable `robot_description`. The `monsterborg_control` package contains the launch file (`monsterborg_control.launch`) 
-that loads the controllers required to control the monsterborg. To get everything running: 
+The `monsterborg_description` package contains the launch file (`spawn_in_gazebo.launch`) that spawns the model into Gazebo and most importantly loads the robot description into the parameter server under the variable `robot_description`. The `monsterborg_control` package contains the launch file (`monsterborg_control.launch`) that loads the controllers required to control the monsterborg. To get everything running: 
 
 **FIRST**: To spawn the robot, open up a new terminal tab and enter the following command: `roslaunch monsterborg_description spawn_in_gazebo.launch` 
 
@@ -24,6 +22,9 @@ to this topic enter: `rostopic pub /differential_drive/cmd_vel [TAB][TAB] [TAB][
 A message will occur where you enter the linear and angular velocity of the monsterborg. Press `ENTER` to publish the message. However, due to the nature 
 of the package used that implements 4WD differential control, I advise to generate your own python file and publish the commands in a `while` loop to constantly
 publish messages to the topic. 
+
+This project was conducted on ROS Melodic and Ubuntu 18.04 LTS. The tutorials I have taken are from TheConstruct more specifically the courses taken were 'ROS for Beginners' and 'ROS Navigation in 5 Days' (https://www.theconstructsim.com/). 
+
 
 
 
