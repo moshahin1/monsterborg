@@ -24,7 +24,7 @@ class MonsterborgSquare:
         counter = 0
         self.cmd_vel.linear.x = 0.5
         self.cmd_vel.angular.z = 0
-        while not counter == 1:
+        while counter < 2:
             self.pub_cmd.publish(self.cmd_vel)
             counter = counter + 0.2
             self.rate.sleep()
@@ -33,8 +33,8 @@ class MonsterborgSquare:
         # 0.785 rad/s
         counter = 0
         self.cmd_vel.linear.x = 0
-        self.cmd_vel.angular.z = 0.785
-        while not counter == 2:
+        self.cmd_vel.angular.z = -1.2
+        while counter < 2:
             self.pub_cmd.publish(self.cmd_vel)
             counter = counter + 0.2
             self.rate.sleep()
