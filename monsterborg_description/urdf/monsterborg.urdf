@@ -229,7 +229,7 @@
     
     <transmission name='tran2'>
         <type>transmission_interface/SimpleTransmission</type>
-        <joint name='base_to_lb_wheel'>
+        <joint name='base_to_lf_wheel'>
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint> 
         <actuator name='motor2'> 
@@ -241,7 +241,7 @@
     
     <transmission name='tran3'>
         <type>transmission_interface/SimpleTransmission</type>
-        <joint name='base_to_lb_wheel'>
+        <joint name='base_to_rb_wheel'>
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint> 
         <actuator name='motor3'> 
@@ -253,7 +253,7 @@
     
     <transmission name='tran4'>
         <type>transmission_interface/SimpleTransmission</type>
-        <joint name='base_to_lb_wheel'>
+        <joint name='base_to_rf_wheel'>
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
         </joint> 
         <actuator name='motor4'> 
