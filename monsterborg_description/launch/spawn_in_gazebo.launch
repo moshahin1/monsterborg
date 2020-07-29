@@ -1,7 +1,7 @@
 <?xml version='1.0'?> 
 <launch> 
 
-    <param name='robot_description' command='cat $(find monsterborg_description/urdf/monsterborg.urdf)'/> 
+    <param name='robot_description' command='cat $(find monsterborg_description)/urdf/monsterborg.urdf'/> 
     
     <include file='$(find gazebo_ros)/launch/empty_world.launch'/> 
     
