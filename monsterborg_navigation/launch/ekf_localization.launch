@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<launch>
+
+	<node pkg='robot_localization' type='navsat_transform_node' name='navsat_transform_node' respawn='true'>
+
+		<param name='magnetic_declination_radians' value='0.012749'/>
+		<param name='zero_altitude' value='0'/>
+		<param name='yaw_offset' value='1.57080'/>
+
+		<!-- Publish the robot's GPS coordinates transformed from the world frame (/odom frame) to the topic '/gps/filtered' --> 
+		<param name='publish_filtered_gps' value='true'/>
+
+		<!-- Publish the transfrom utm-> world_frame (/odom frame) --> 
+		<param name='broadcast_utm_transform' value='true'/>
+		<param name='broadcast_utm_transform_as_parent_frame' value='true'/> 
+
+		<!-- Specifying the global frame ORIGIN (/odom - robot's starting position) -->
+        <!-- param name="wait_for_datum" value="true"/-->
+        <!-- rosparam param="datum">[51.336496, -2.784524, 0.0, odom, base_link]</rosparam -->
+
+		<!-- navsat_transform_node subscribing to the project-specific topics --> 
+        <remap from='/imu/data' to='/imu/data'/>
+		<remap from='/gps/fix' to='/navsat/fix'/>
+
+	</node>
+
+
+	<node pkg='robot_localization' type='ekf_localization_node' name='ekf_odom_node' clear_params='true'>
+
+		<rosparam command='load' file='$(find monsterborg_navigation)/params/ekf_params.yaml'/> 
+
+	</node> 
+
+
+</launch>
