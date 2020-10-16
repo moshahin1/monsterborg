@@ -1,10 +1,22 @@
 # Monsterborg
-So far this repository contains 2 ROS packages: 
+This repository contains 3 ROS packages: 
 * `monsterborg_description` 
 * `monsterborg_control`
+* `monsterborg_navigation`
 
 **IMPORTANT**: Before starting anything it is important to check you have certain ROS packages installed in ROS in order to successfully run each package. Check the `pacakage.xml` file of each packages to find the package dependencies. Secondly, open up a terminal tab (and do not close the tab) and run the command: `roscore`
+********************************************************************
+**AUTONOMOUS NAVIGATION**
+To view autonomous GPS-based navigation, execute the following in different terminal tabs:
+1. `roslaunch monsterborg_navigation outdoor_nav.launch` : A Gazebo world and RVIZ world should will pop up. The `move_base` node is up and running. Sometimes Gazebo crashes when this executed this command. If this occurs, re-execute the launch file. 
+For single point navigation:
+`rosrun monsterborg_navigation single_move_base_nav.py`
+For multiple point navigation:
+`rosrun monsterborg_navigation multiple_move_base_nav.py`
 
+Once the Monsterborg is done navigating, the terminal running `roslaunch monsterborg_navigation outdoor_nav.launch` should terminate and display a message the Monsterborg has achieved its goals. 
+
+********************************************************************
 The `monsterborg_description` package contains the launch file (`spawn_in_gazebo.launch`) that spawns the model into Gazebo and most importantly loads the robot description into the parameter server under the variable `robot_description`. The `monsterborg_control` package contains the launch file (`monsterborg_control.launch`) that loads the controllers required to control the monsterborg. To get everything running: 
 
 **FIRST**: To spawn the robot, open up a new terminal tab and enter the following command: `roslaunch monsterborg_description spawn_in_gazebo.launch` 
@@ -24,9 +36,6 @@ of the package used that implements 4WD differential control, I advise to genera
 publish messages to the topic. 
 
 This project was conducted on ROS Melodic, Gazebo and Ubuntu 18.04 LTS. When installing everything on Ubuntu install ROS Melodic first, choosing the desktop-full installation. This installation option will install all the important packages to get started (including all packages that connect ROS with Gazebo such as the plug-ins etc...). ALso please refer to the `package.xml` file of each package to install the additional packages to get everything running smoothly. After installing ROS, install Gazebo. 
-
-
-The tutorials I have taken are from TheConstruct, more specifically the courses taken were 'ROS for Beginners' and 'ROS Navigation in 5 Days' (https://www.theconstructsim.com/). 
 
 
 
