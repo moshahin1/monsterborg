@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- Launches the launch file from monsterborg_description, less tedious --> 
+	<include file='$(find monsterborg_description)/launch/spawn_in_gazebo.launch'/>
+
+    <!-- Load the joint controller configuration-->
+    <rosparam command="load" file="$(find monsterborg_control)/config/diff_drive_control.yaml" />
+
+    <!-- Load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" output='screen'
+          args="joint_state_controller differential_drive" />
+
+    <!-- Launch the robot_state_publisher to broadcast transforms to '/tf' -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn='false' output="screen">
+		<!-- <remap from="/joint_states" to="/monsterborg/joint_states" /> --> 
+	</node>
+
+</launch>
