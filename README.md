@@ -9,9 +9,9 @@ This repository contains 3 ROS packages:
 **AUTONOMOUS NAVIGATION**
 To view autonomous GPS-based navigation, execute the following in different terminal tabs:
 1. `roslaunch monsterborg_navigation outdoor_nav.launch` : A Gazebo world and RVIZ world should will pop up. The `move_base` node is up and running. Sometimes Gazebo crashes when this executed this command. If this occurs, re-execute the launch file. 
-For single point navigation:
+1. For single point navigation:
 `rosrun monsterborg_navigation single_move_base_nav.py`
-For multiple point navigation:
+2. For multiple point navigation:
 `rosrun monsterborg_navigation multiple_move_base_nav.py`
 
 Once the Monsterborg is done navigating, the terminal running `roslaunch monsterborg_navigation outdoor_nav.launch` should terminate and display a message the Monsterborg has achieved its goals. 
