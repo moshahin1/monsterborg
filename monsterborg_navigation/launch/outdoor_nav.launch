@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch> 
+	<!-- Loads the URDF in the parameter server under the variable 'robot_description' -->
+	<!-- Spawns the model in Gazebo and loads all necessary controllers + loads differential drive -->
+	<include file="$(find monsterborg_control)/launch/monsterborg_control.launch"/>
+
+	<!-- map_server -->
+	<include file="$(find monsterborg_navigation)/launch/map_server.launch"/>
+
+	<!-- EKF localization -->
+	<include file="$(find monsterborg_navigation)/launch/ekf_localization.launch"/>
+
+	<!-- move_base -->
+	<include file="$(find monsterborg_navigation)/launch/move_base.launch"/>
+
+	<!-- Launch rviz for visualization purposes-->
+	<node type='rviz' name='rviz' pkg='rviz' args='-d $(find monsterborg_navigation)/config/move_base.rviz' /> 
+
+</launch> 
+
+

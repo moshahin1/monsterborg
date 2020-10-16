@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch> 
+
+	<!-- Launching the move_base node that sends commands (geometry_msgs/Twist) to the topic /cmd_vel --> 
+	<node pkg='move_base' type='move_base' name='move_base' respawn='false'>
+		<rosparam command='load' ns='global_costmap' file='$(find monsterborg_navigation)/params/costmap_common_params.yaml'/> 
+		<rosparam command='load' ns='local_costmap' file='$(find monsterborg_navigation)/params/costmap_common_params.yaml'/>
+ 
+		<rosparam command='load' file='$(find monsterborg_navigation)/params/local_costmap_params.yaml'/>
+		<rosparam command='load' file='$(find monsterborg_navigation)/params/global_costmap_params.yaml'/>
+
+		<rosparam command='load' file='$(find monsterborg_navigation)/params/base_local_planner_params.yaml'/>
+		
+		<!-- move_base automatically publishes to the topic 'cmd_vel', hence must remap due to differential_drive plugin -->
+		<!-- move_base automatically subscribes to the topic 'odom', ekf_localization publishes to /odometry/filtered -->
+		<remap from="cmd_vel" to="/differential_drive/cmd_vel" /> 
+		<remap from="odom" to="/odometry/filtered" /> 
+	</node> 
+
+</launch> 
+
+
+

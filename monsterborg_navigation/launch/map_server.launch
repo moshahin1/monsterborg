@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch> 
+
+	<!-- Launch the map_server node --> 
+	<node pkg='map_server' type='map_server' name='map_server' args='$(find monsterborg_navigation)/map/empty_map.yaml'>
+		<!-- This is subject to change for the future ... -->
+		<param name='frame_id' value='odom'/> 
+	</node> 
+
+</launch> 
