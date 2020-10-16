@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- Loads the URDF in the parameter server variable 'robot_description' -->
+    <param name="robot_description" command="cat $(find monsterborg_description)/urdf/monsterborg.urdf"/>
+
+
+	<!-- Include the file path for empty world, launches the services required for the urdf_spawner node below -->
+	<!-- <include file="$(find gazebo_ros)/launch/empty_world.launch"/> -->
+	<include file='$(find monsterborg_description)/launch/gaz_world.launch' />
+	
+	<!-- Arguements for Gazebo --> 
+	<arg name="x" value="0.0"/>
+    <arg name="y" value="0.0"/>
+    <arg name="z" value="0.5"/>
+    <arg name="urdf_robot_file" value="$(find monsterborg_description)/urdf/monsterborg.urdf" />
+    <arg name="robot_name" value="monsterborg"/> 
+
+	<!-- Node to spawm the robot in Gazebo --> 
+	 <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model $(arg robot_name) -param robot_description"/>
+
+</launch> 
