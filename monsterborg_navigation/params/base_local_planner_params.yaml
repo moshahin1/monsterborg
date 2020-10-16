@@ -12,8 +12,8 @@ TrajectoryPlannerROS:
   holonomic_robot: false
 
 # Goal tolerance parameters
-  yaw_goal_tolerance: 0.1  # in rads
-  xy_goal_tolerance: 0.2  # in meters
+  yaw_goal_tolerance: 0.15  # in rads
+  xy_goal_tolerance: 0.25  # in meters
 
 # Forward Simulation Parameters
   sim_time: 3.0 # The amount of time to forward-simulate trajectories in seconds
