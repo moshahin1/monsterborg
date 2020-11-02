@@ -336,7 +336,7 @@
 
 <!-- ******************************** Transmissions ******************************* --> 
 
-	 <transmission name="tran1">
+    <transmission name="tran1">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="base_to_lb_wheel">
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
@@ -348,7 +348,7 @@
     </transmission>
 
 
-	<transmission name="tran2">
+    <transmission name="tran2">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="base_to_lf_wheel">
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
@@ -359,8 +359,7 @@
         </actuator>
     </transmission>
 
-
-	 <transmission name="tran3">
+    <transmission name="tran3">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="base_to_rf_wheel">
             <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
