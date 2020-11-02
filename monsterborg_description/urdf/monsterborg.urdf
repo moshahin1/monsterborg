@@ -182,128 +182,6 @@
     </gazebo>
 
 
-<!--
-    <link name="ir_sensor1">
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-            <material name="black">
-                <color rgba="0 0 0 1"/>
-            </material>
-        </visual>
-
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="1e-5" />
-            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-        </inertial>
-
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-        </collision>
-    </link>
-
-    <gazebo reference="ir_sensor1">
-        <material>Gazebo/Green</material>
-    </gazebo>
-
-
-    <link name="ir_sensor2">
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-            <material name="black">
-                <color rgba="0 0 0 1"/>
-            </material>
-        </visual>
-
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="1e-5" />
-            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-        </inertial>
-
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-        </collision>
-    </link>
-
-    <gazebo reference="ir_sensor2">
-        <material>Gazebo/Green</material>
-    </gazebo>
-
-
-    <link name="ir_sensor3">
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-            <material name="black">
-                <color rgba="0 0 0 1"/>
-            </material>
-        </visual>
-
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="1e-5" />
-            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-        </inertial>
-
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-        </collision>
-    </link>
-
-    <gazebo reference="ir_sensor3">
-        <material>Gazebo/Green</material>
-    </gazebo>
-
-
-    <link name="ir_sensor4">
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-            <material name="black">
-                <color rgba="0 0 0 1"/>
-            </material>
-        </visual>
-
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="1e-5" />
-            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-        </inertial>
-
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-        </collision>
-    </link>
-
-    <gazebo reference="ir_sensor4">
-        <material>Gazebo/Green</material>
-    </gazebo>
--->
-
-
     <link name="laser">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -333,33 +211,6 @@
         <material>Gazebo/Yellow</material>
     </gazebo>
 
-
-<!-- 
-    <link name="camera_link">
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-            <material name="black">
-                <color rgba="0 0 0 1"/>
-            </material>
-        </visual>
-
-        <inertial>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <mass value="1e-5" />
-            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
-        </inertial>
-
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-            <geometry>
-                <box size="0.01 0.01 0.01"/>
-            </geometry>
-        </collision>
-    </link>
---> 
 <!-- ********************************** Joints ************************************* --> 
 
 	<joint name="base_to_lb_wheel" type="continuous">
@@ -400,31 +251,7 @@
         <limit effort="10" velocity="100"/>
       	<joint_properties damping="0.0" friction="0.0"/>
     </joint>
-<!--
-    <joint name="ir_sensor_joint1" type="fixed">
-        <origin rpy="0 0 0" xyz="0.08 0 0.065" />
-        <parent link="base_link"/>
-        <child link="ir_sensor1"/>
-    </joint>
 
-    <joint name="ir_sensor_joint2" type="fixed">
-        <origin rpy="0 0 3.14159" xyz="-0.08 0 0.065" />
-        <parent link="base_link"/>
-        <child link="ir_sensor2"/>
-    </joint>
-
-    <joint name="ir_sensor_joint3" type="fixed">
-        <origin rpy="0 0 1.5708" xyz="0 0.07 0.065" />
-        <parent link="base_link"/>
-        <child link="ir_sensor3"/>
-    </joint>
-
-    <joint name="ir_sensor_joint4" type="fixed">
-        <origin rpy="0 0 -1.5708" xyz="0 -0.07 0.065" />
-        <parent link="base_link"/>
-        <child link="ir_sensor4"/>
-    </joint>
--->
 
     <joint name="laser_joint" type="fixed">
         <origin rpy="0 0 0" xyz="0.0 0 0.065" />
@@ -432,13 +259,7 @@
         <child link="laser"/>
     </joint>
 
-<!--
-    <joint name="camera_link_joint" type="fixed">
-        <origin rpy="0 0 0" xyz="0.0 0 0.05" />
-        <parent link="base_link"/>
-        <child link="camera_link"/>
-    </joint>	
---> 
+
 <!-- ******************************* Gazebo-ROS Plugins *************************** --> 
 
 <!-- Differential Drive -->
@@ -480,155 +301,6 @@
         </plugin>
   	</gazebo>
 
-<!-- IR SENSOR 
-  <gazebo reference="ir_sensor1">
-       <sensor type="ray" name="range_sensor">
-          <pose>0 0 0 0 0 0</pose>
-          <visualize>true</visualize>
-          <update_rate>50</update_rate>
-          <ray>
-             <scan>
-                <horizontal>
-                   <samples>30</samples>
-                   <resolution>1.0</resolution>
-                   <min_angle>-0.14835</min_angle>
-                   <max_angle>0.14835</max_angle>
-                </horizontal>
-                <vertical>
-                   <samples>1</samples>
-                   <resolution>1</resolution>
-                   <min_angle>-0.01</min_angle>
-                   <max_angle>0.01</max_angle>
-                </vertical>
-             </scan>
-             <range>
-                <min>0.01</min>
-                <max>0.8</max>
-                <resolution>0.02</resolution>
-             </range>
-          </ray>
-          <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-             <gaussianNoise>0.005</gaussianNoise>
-             <alwaysOn>true</alwaysOn>
-             <updateRate>50</updateRate>
-             <topicName>/ir_sensor1</topicName>
-             <frameName>ir_sensor1</frameName>
-             <radiation>infrared</radiation><fov>0.3</fov>
-          </plugin>
-       </sensor>
-  </gazebo>
-
-  <gazebo reference="ir_sensor2">
-       <sensor type="ray" name="range_sensor">
-          <pose>0 0 0 0 0 0</pose>
-          <visualize>true</visualize>
-          <update_rate>50</update_rate>
-          <ray>
-             <scan>
-                <horizontal>
-                   <samples>30</samples>
-                   <resolution>1.0</resolution>
-                   <min_angle>-0.14835</min_angle>
-                   <max_angle>0.14835</max_angle>
-                </horizontal>
-                <vertical>
-                   <samples>1</samples>
-                   <resolution>1</resolution>
-                   <min_angle>-0.01</min_angle>
-                   <max_angle>0.01</max_angle>
-                </vertical>
-             </scan>
-             <range>
-                <min>0.01</min>
-                <max>0.8</max>
-                <resolution>0.02</resolution>
-             </range>
-          </ray>
-          <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-             <gaussianNoise>0.005</gaussianNoise>
-             <alwaysOn>true</alwaysOn>
-             <updateRate>50</updateRate>
-             <topicName>/ir_sensor2</topicName>
-             <frameName>ir_sensor2</frameName>
-             <radiation>infrared</radiation><fov>0.3</fov>
-          </plugin>
-       </sensor>
-  </gazebo>
-
-  <gazebo reference="ir_sensor3">
-       <sensor type="ray" name="range_sensor">
-          <pose>0 0 0 0 0 0</pose>
-          <visualize>true</visualize>
-          <update_rate>50</update_rate>
-          <ray>
-             <scan>
-                <horizontal>
-                   <samples>30</samples>
-                   <resolution>1.0</resolution>
-                   <min_angle>-0.14835</min_angle>
-                   <max_angle>0.14835</max_angle>
-                </horizontal>
-                <vertical>
-                   <samples>1</samples>
-                   <resolution>1</resolution>
-                   <min_angle>-0.01</min_angle>
-                   <max_angle>0.01</max_angle>
-                </vertical>
-             </scan>
-             <range>
-                <min>0.01</min>
-                <max>0.8</max>
-                <resolution>0.02</resolution>
-             </range>
-          </ray>
-          <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-             <gaussianNoise>0.005</gaussianNoise>
-             <alwaysOn>true</alwaysOn>
-             <updateRate>50</updateRate>
-             <topicName>/ir_sensor3</topicName>
-             <frameName>ir_sensor3</frameName>
-             <radiation>infrared</radiation><fov>0.3</fov>
-          </plugin>
-       </sensor>
-  </gazebo>
-
-  <gazebo reference="ir_sensor4">
-       <sensor type="ray" name="range_sensor">
-          <pose>0 0 0 0 0 0</pose>
-          <visualize>true</visualize>
-          <update_rate>50</update_rate>
-          <ray>
-             <scan>
-                <horizontal>
-                   <samples>30</samples>
-                   <resolution>1.0</resolution>
-                   <min_angle>-0.14835</min_angle>
-                   <max_angle>0.14835</max_angle>
-                </horizontal>
-                <vertical>
-                   <samples>1</samples>
-                   <resolution>1</resolution>
-                   <min_angle>-0.01</min_angle>
-                   <max_angle>0.01</max_angle>
-                </vertical>
-             </scan>
-             <range>
-                <min>0.01</min>
-                <max>0.8</max>
-                <resolution>0.02</resolution>
-             </range>
-          </ray>
-          <plugin filename="libgazebo_ros_range.so" name="gazebo_ros_range">
-             <gaussianNoise>0.005</gaussianNoise>
-             <alwaysOn>true</alwaysOn>
-             <updateRate>50</updateRate>
-             <topicName>/ir_sensor4</topicName>
-             <frameName>ir_sensor4</frameName>
-             <radiation>infrared</radiation><fov>0.3</fov>
-          </plugin>
-       </sensor>
-  </gazebo>
---> 
 <!-- LiDAR -->
   <gazebo reference="laser">
     <sensor type="ray" name="head_hokuyo_sensor">
@@ -661,73 +333,6 @@
       </plugin>
     </sensor>
   </gazebo>
-
-
-<!-- Thermal Camera   
-  <gazebo reference="camera_link">
-      <sensor type="camera" name="thermal_camera_sensor">
-        <update_rate>10</update_rate>
-        <camera>
-          <horizontal_fov>90</horizontal_fov>
-          <image>
-            <format>R8G8B8</format>
-            <width>120</width>
-            <height>160</height>
-          </image>
-          <clip>
-            <near>0.01</near>
-            <far>10</far>
-          </clip>
-        </camera>
-        <plugin name="thermal_camera_controller" filename="libgazebo_ros_thermal_camera.so">
-          <alwaysOn>true</alwaysOn>
-          <updateRate>10</updateRate>
-          <imageTopicName>/thermal/image_raw</imageTopicName>
-          <cameraInfoTopicName>/thermal/camera_info</cameraInfoTopicName>
-          <frameName>camera_link</frameName>
-        </plugin>
-      </sensor>
-  </gazebo>
--->
-
-<!-- 
-  <gazebo reference="camera_link">
-    <sensor type="camera" name="camera1">
-      <update_rate>30.0</update_rate>
-      <camera name="head">
-        <horizontal_fov>1.3962634</horizontal_fov>
-        <image>
-          <width>800</width>
-          <height>800</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.02</near>
-          <far>300</far>
-        </clip>
-        <noise>
-          <type>gaussian</type>
-          <mean>0.0</mean>
-          <stddev>0.007</stddev>
-        </noise>
-      </camera>
-      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-        <alwaysOn>true</alwaysOn>
-        <updateRate>0.0</updateRate>
-        <cameraName>camera1</cameraName>
-        <imageTopicName>image_raw</imageTopicName>
-        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-        <frameName>camera_link</frameName>
-        <hackBaseline>0.07</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
-        <distortionK3>0.0</distortionK3>
-        <distortionT1>0.0</distortionT1>
-        <distortionT2>0.0</distortionT2>
-      </plugin>
-    </sensor>
-  </gazebo>
--->
 
 <!-- ******************************** Transmissions ******************************* --> 
 
