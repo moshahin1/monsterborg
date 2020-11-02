@@ -9,11 +9,11 @@ obstacle_layer:
   observation_sources: laser_scan_sensor
   laser_scan_sensor: {sensor_frame: laser, data_type: LaserScan, topic: laser_scan, marking: true, clearing: true}
 
-range_sensor_layer:
-  clear_threshold: 0.46
-  mark_threshold: 0.98
-  clear_on_max_reading: false
-  topics: ["/ir_sensor1", "/ir_sensor2", "/ir_sensor3", "/ir_sensor4"]
+#range_sensor_layer:
+#  clear_threshold: 0.46
+#  mark_threshold: 0.98
+#  clear_on_max_reading: false
+#  topics: ["/ir_sensor1", "/ir_sensor2", "/ir_sensor3", "/ir_sensor4"]
 
 inflation layer:
   inflation_radius: 1.0
