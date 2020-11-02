@@ -38,7 +38,7 @@
     </gazebo>
 
 
-	<link name="lb_wheel">
+    <link name="lb_wheel">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
