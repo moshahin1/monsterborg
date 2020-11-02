@@ -5,8 +5,11 @@ This repository contains 3 ROS packages:
 * `monsterborg_navigation`
 
 **IMPORTANT**: Before starting anything it is important to check you have certain ROS packages installed in ROS in order to successfully run each package. Check the `pacakage.xml` file of each packages to find the package dependencies. Secondly, open up a terminal tab (and do not close the tab) and run the command: `roscore`
+
 ********************************************************************
 **AUTONOMOUS NAVIGATION**
+
+**IMPORTANT** Before executing any commands, `monsterborg_navigation` contains 2 python programs; `single_move_base_outdoor_nav.py` and `multiple_move_base_outdoor_nav.py`. The programs must be given permission to be executable by any user. To achieve so, run the commands: `chmod 777 single_move_base_outdoor_nav.py` and `chmod 777 multiple_move_base_outdoor_nav.py`
 
 To view autonomous GPS-based navigation, execute the following in different terminal tabs:
 1. `roslaunch monsterborg_navigation outdoor_nav.launch` : A Gazebo world and RVIZ world will pop up. The `move_base` node is up and running. Sometimes Gazebo crashes when this executed this command. If this occurs, re-execute the launch file. 
